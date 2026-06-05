@@ -2,202 +2,219 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Nexus - Ecossistema de Agendamento</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-slate-50 text-slate-800 font-['Inter'] antialiased">
+<body class="bg-slate-50 text-slate-800 font-['Plus_Jakarta_Sans'] antialiased min-h-screen overflow-x-hidden">
 
-<div id="telaApresentacao" class="min-h-screen flex flex-col justify-between bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 text-white p-6 relative overflow-hidden">
-    <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-indigo-600 rounded-full blur-[120px] opacity-20 pointer-events-none"></div>
-    <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-emerald-600 rounded-full blur-[120px] opacity-10 pointer-events-none"></div>
+<div id="telaApresentacao" class="min-h-screen flex flex-col justify-between bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950 text-white p-4 md:p-8 relative overflow-hidden">
+    <div class="absolute top-1/4 left-1/4 w-72 md:w-96 h-72 md:h-96 bg-indigo-500 rounded-full blur-[100px] opacity-15 pointer-events-none animated-blur"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-72 md:w-96 h-72 md:h-96 bg-emerald-500 rounded-full blur-[100px] opacity-10 pointer-events-none animated-blur-delayed"></div>
 
     <header class="max-w-6xl w-full mx-auto flex justify-between items-center relative z-10 py-4">
-        <div class="flex items-center gap-3 text-2xl font-bold text-indigo-400 tracking-tight">
-            <i class="fa-solid fa-layer-group"></i> Nexus
+        <div class="logo-container">
+            <span class="logo-text">NEXUS</span>
         </div>
-        <span class="text-xs font-semibold bg-slate-800 border border-slate-700 px-3 py-1.5 rounded-full text-slate-300">v1.2.0-Transacional</span>
+        <span class="text-[10px] md:text-xs font-bold uppercase tracking-widest bg-slate-900/80 border border-slate-800 px-3 py-1.5 rounded-full text-indigo-300 backdrop-blur-sm">v2.0-Secure</span>
     </header>
 
-    <main class="max-w-4xl w-full mx-auto text-center my-auto relative z-10 py-12 space-y-8">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-300 text-xs font-semibold uppercase tracking-wider mx-auto">
-            <i class="fa-solid fa-sparkles"></i> Inteligência Anticonflito Automatizada
+    <main class="max-w-4xl w-full mx-auto text-center my-auto relative z-10 py-12 space-y-8 px-2">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-300 text-[10px] md:text-xs font-bold uppercase tracking-wider mx-auto">
+            <i class="fa-solid fa-shield-cat text-xs"></i> Segurança Multicamadas Ativa
         </div>
-        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-slate-400">
-            A Solução Definitiva para Gestão de Horários
+        <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight leading-[1.1] text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-slate-500">
+            Gestão de Horários Sem Conflitos.
         </h1>
-        <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto font-normal leading-relaxed">
-            Potencialize sua empresa com o ecossistema Nexus. Proteção transacional contra sobreposição de horários, métricas profundas de desempenho e segurança isolada por credenciais.
+        <p class="text-sm sm:text-base md:text-xl text-slate-400 max-w-2xl mx-auto font-normal leading-relaxed">
+            Proteção transacional estrita contra sobreposição de horários. Crie sua conta exclusiva, isole seus dados e acesse seu painel analítico de qualquer dispositivo.
         </p>
         <div class="pt-4">
-            <button onclick="irParaLogin()" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 px-8 rounded-2xl shadow-xl shadow-indigo-600/30 transition-all transform hover:-translate-y-0.5 flex items-center gap-3 text-base mx-auto group">
-                Acessar Plataforma <i class="fa-solid fa-arrow-right text-sm transition-transform group-hover:translate-x-1"></i>
+            <button onclick="irParaLogin()" class="w-full sm:w-auto bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-700 hover:to-violet-700 text-white font-bold py-4 px-8 rounded-2xl shadow-xl shadow-indigo-600/20 transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-3 text-sm md:text-base mx-auto group">
+                Entrar na Plataforma <i class="fa-solid fa-arrow-right text-xs transition-transform group-hover:translate-x-1"></i>
             </button>
         </div>
     </main>
 
-    <section class="max-w-6xl w-full mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10 border-t border-slate-800/60 pt-8 mt-auto">
-        <div class="bg-slate-900/40 border border-slate-800/80 p-5 rounded-xl backdrop-blur-sm">
-            <h3 class="text-slate-200 font-bold text-base mb-1.5 flex items-center gap-2"><i class="fa-solid fa-user-lock text-indigo-400"></i> Individualismo de Dados</h3>
-            <p class="text-xs text-slate-400 leading-relaxed">Seus agendamentos, métricas e histórico protegidos por chaves criptográficas exclusivas.</p>
+    <section class="max-w-6xl w-full mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 relative z-10 border-t border-slate-900 pt-8 mt-8 text-left">
+        <div class="bg-slate-900/30 border border-slate-800/50 p-5 rounded-2xl backdrop-blur-md">
+            <h3 class="text-slate-100 font-bold text-sm md:text-base mb-1.5 flex items-center gap-2"><i class="fa-solid fa-fingerprint text-indigo-400"></i> Registro Único de Contas</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">Garantia absoluta de que nenhuma outra credencial idêntica violará ou acessará seus registros e painéis.</p>
         </div>
-        <div class="bg-slate-900/40 border border-slate-800/80 p-5 rounded-xl backdrop-blur-sm">
-            <h3 class="text-slate-200 font-bold text-base mb-1.5 flex items-center gap-2"><i class="fa-solid fa-shield-halved text-emerald-400"></i> Validação no Core</h3>
-            <p class="text-xs text-slate-400 leading-relaxed">Camada integrada diretamente ao Spring Boot e ao Banco de Dados impedindo choques acidentais.</p>
+        <div class="bg-slate-900/30 border border-slate-800/50 p-5 rounded-2xl backdrop-blur-md">
+            <h3 class="text-slate-100 font-bold text-sm md:text-base mb-1.5 flex items-center gap-2"><i class="fa-solid fa-bolt text-emerald-400"></i> Bloqueio Transacional</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">Algoritmo lógico rodando direto no core do Spring Boot que impede choques de milissegundos na agenda.</p>
         </div>
-        <div class="bg-slate-900/40 border border-slate-800/80 p-5 rounded-xl backdrop-blur-sm">
-            <h3 class="text-slate-200 font-bold text-base mb-1.5 flex items-center gap-2"><i class="fa-solid fa-chart-line text-amber-400"></i> Analytics nativo</h3>
-            <p class="text-xs text-slate-400 leading-relaxed">Monitore taxas de no-show, conversão e produtividade sem precisar exportar planilhas externa.</p>
+        <div class="bg-slate-900/30 border border-slate-800/50 p-5 rounded-2xl backdrop-blur-md">
+            <h3 class="text-slate-100 font-bold text-sm md:text-base mb-1.5 flex items-center gap-2"><i class="fa-solid fa-chart-line text-amber-400"></i> Analytics Isolado</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">Métricas calculadas e exibidas sob demanda com base unicamente no histórico do operador logado.</p>
         </div>
     </section>
 </div>
 
-<div id="telaLogin" class="hidden min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 p-6">
-    <div class="max-w-md w-full bg-white rounded-2xl shadow-2xl p-8 md:p-10 border border-slate-100 relative">
-        <button onclick="voltarParaApresentacao()" class="absolute top-6 left-6 text-slate-400 hover:text-slate-600 transition-all text-sm flex items-center gap-1">
-            <i class="fa-solid fa-chevron-left text-xs"></i> Voltar
+<div id="telaLogin" class="hidden min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950 p-4">
+    <div class="max-w-md w-full bg-white rounded-3xl shadow-2xl p-6 md:p-10 border border-slate-100 relative overflow-hidden">
+        <button onclick="voltarParaApresentacao()" class="absolute top-6 left-6 text-slate-400 hover:text-slate-600 transition-all text-xs font-semibold flex items-center gap-1">
+            <i class="fa-solid fa-chevron-left text-[10px]"></i> Sair
         </button>
-        <div class="text-center mt-4 mb-8">
-            <div class="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-indigo-50 text-indigo-600 text-xl font-bold mb-3">
-                <i class="fa-solid fa-layer-group"></i>
+        <div class="text-center mt-6 mb-8">
+            <div class="logo-container justify-center mb-4">
+                <span class="logo-text-dark">NEXUS</span>
             </div>
-            <h2 class="text-2xl font-bold text-slate-800">Identificação Requerida</h2>
-            <p class="text-sm text-slate-500 mt-1">Insira suas credenciais exclusivas do Nexus.</p>
+            <h2 id="tituloAutenticacao" class="text-xl md:text-2xl font-extrabold text-slate-800">Acesso ao Ecossistema</h2>
+            <p id="subtituloAutenticacao" class="text-xs text-slate-500 mt-1.5">Insira suas chaves para descriptografar seu painel.</p>
         </div>
-        <form id="formLogin" class="space-y-4">
+        <form id="formLogin" class="space-y-4.5">
             <div>
-                <label class="block text-sm font-semibold text-slate-700 mb-1">Nome de Usuário</label>
+                <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Nome de Usuário</label>
                 <div class="relative">
-                    <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-400"><i class="fa-regular fa-user"></i></span>
-                    <input type="text" id="inputUsuarioLogin" required class="w-full pl-10 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:border-indigo-600 focus:bg-white transition-all text-sm font-medium" placeholder="Ex: rogerrdeveloper">
+                    <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 text-slate-400 text-sm"><i class="fa-regular fa-user"></i></span>
+                    <input type="text" id="inputUsuarioLogin" required class="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:border-indigo-600 focus:bg-white transition-all text-sm font-medium" placeholder="Ex: roger_dev">
                 </div>
             </div>
             <div>
-                <label class="block text-sm font-semibold text-slate-700 mb-1">Sua Senha de Acesso</label>
+                <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Senha de Acesso</label>
                 <div class="relative">
-                    <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-400"><i class="fa-solid fa-lock"></i></span>
-                    <input type="password" id="inputSenhaLogin" required class="w-full pl-10 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:border-indigo-600 focus:bg-white transition-all text-sm font-medium" placeholder="••••••••">
+                    <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 text-slate-400 text-sm"><i class="fa-solid fa-lock"></i></span>
+                    <input type="password" id="inputSenhaLogin" required class="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:border-indigo-600 focus:bg-white transition-all text-sm font-medium" placeholder="••••••••">
                 </div>
             </div>
-            <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-4 rounded-xl shadow-lg shadow-indigo-600/20 transition-all flex items-center justify-center gap-2 mt-2">
-                Autenticar Carteira <i class="fa-solid fa-arrow-right-to-bracket text-sm"></i>
-            </button>
+
+            <div class="flex flex-col sm:flex-row gap-3 pt-3">
+                <button type="button" onclick="submeterLogin()" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-4 rounded-xl shadow-lg shadow-indigo-600/10 transition-all flex items-center justify-center gap-2 text-sm order-1 sm:order-2">
+                    Autenticar <i class="fa-solid fa-arrow-right-to-bracket text-xs"></i>
+                </button>
+                <button type="button" onclick="submeterCadastro()" class="w-full bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold py-3 px-4 rounded-xl transition-all flex items-center justify-center gap-2 text-sm order-2 sm:order-1">
+                    Criar Conta Nova
+                </button>
+            </div>
         </form>
     </div>
 </div>
 
-<div id="ambienteSistema" class="hidden min-h-screen flex">
+<div id="ambienteSistema" class="hidden min-h-screen flex flex-col md:flex-row relative">
 
-    <aside class="w-72 bg-slate-900 text-white p-6 flex flex-col justify-between shrink-0 shadow-xl">
-        <div>
-            <div class="flex items-center gap-3 text-2xl font-bold text-white mb-10 tracking-tight">
-                <i class="fa-solid fa-layer-group text-indigo-400"></i> Nexus
+    <header class="md:hidden bg-slate-950 text-white p-4 flex justify-between items-center sticky top-0 z-50 shadow-md">
+        <div class="logo-container scale-90">
+            <span class="logo-text">NEXUS</span>
+        </div>
+        <button onclick="toggleMenuMobile()" class="text-white text-xl p-1.5" id="btnMenuMobile">
+            <i class="fa-solid fa-bars" id="iconeMenuMobile"></i>
+        </button>
+    </header>
+
+    <aside id="sidebarMenu" class="hidden md:flex w-full md:w-72 bg-slate-950 text-white p-6 flex-col justify-between shrink-0 shadow-xl fixed md:sticky top-[60px] md:top-0 h-[calc(100vh-60px)] md:h-screen z-40 transition-all duration-300 overflow-y-auto">
+        <div class="space-y-8">
+            <div class="hidden md:flex py-2">
+                <div class="logo-container">
+                    <span class="logo-text">NEXUS</span>
+                </div>
             </div>
-            <nav class="flex flex-col gap-1">
-                <button onclick="navegar('aba-agendamentos')" id="nav-aba-agendamentos" class="nav-btn active flex items-center gap-3 w-full text-left py-3 px-4 rounded-xl font-medium transition-all text-slate-400 hover:text-white hover:bg-slate-800/50">
-                    <i class="fa-solid fa-calendar-days w-5 text-center"></i> Agendamentos
+            <nav class="flex flex-col gap-2">
+                <button onclick="navegar('aba-agendamentos')" id="nav-aba-agendamentos" class="nav-btn active flex items-center gap-3 w-full text-left py-3.5 px-4 rounded-xl font-semibold transition-all text-slate-400 hover:text-white hover:bg-slate-900">
+                    <i class="fa-solid fa-calendar-days w-5 text-center text-sm"></i> Agendamentos
                 </button>
-                <button onclick="navegar('aba-metricas')" id="nav-aba-metricas" class="nav-btn flex items-center gap-3 w-full text-left py-3 px-4 rounded-xl font-medium transition-all text-slate-400 hover:text-white hover:bg-slate-800/50">
-                    <i class="fa-solid fa-chart-pie w-5 text-center"></i> Métricas da Operação
+                <button onclick="navegar('aba-metricas')" id="nav-aba-metricas" class="nav-btn flex items-center gap-3 w-full text-left py-3.5 px-4 rounded-xl font-semibold transition-all text-slate-400 hover:text-white hover:bg-slate-900">
+                    <i class="fa-solid fa-chart-pie w-5 text-center text-sm"></i> Métricas Operacionais
                 </button>
-                <button onclick="navegar('aba-ajustes')" id="nav-aba-ajustes" class="nav-btn flex items-center gap-3 w-full text-left py-3 px-4 rounded-xl font-medium transition-all text-slate-400 hover:text-white hover:bg-slate-800/50">
-                    <i class="fa-solid fa-sliders w-5 text-center"></i> Ajustes Comerciais
+                <button onclick="navegar('aba-ajustes')" id="nav-aba-ajustes" class="nav-btn flex items-center gap-3 w-full text-left py-3.5 px-4 rounded-xl font-semibold transition-all text-slate-400 hover:text-white hover:bg-slate-900">
+                    <i class="fa-solid fa-sliders w-5 text-center text-sm"></i> Ajustes Comerciais
                 </button>
             </nav>
         </div>
-        <div class="border-t border-slate-800 pt-5 flex items-center justify-between">
-            <div>
-                <p class="text-xs text-slate-500 font-medium">Operador Autenticado</p>
-                <strong id="nomeUsuarioSessao" class="text-sm text-slate-200 block truncate max-w-[150px]">---</strong>
+        <div class="border-t border-slate-900 pt-4 mt-6 flex items-center justify-between">
+            <div class="truncate mr-2">
+                <p class="text-[10px] text-slate-500 font-bold uppercase tracking-wider">Operador</p>
+                <strong id="nomeUsuarioSessao" class="text-xs md:text-sm text-slate-200 block truncate max-w-[140px]">---</strong>
             </div>
-            <button onclick="logout()" class="text-slate-500 hover:text-rose-400 p-2 rounded-lg hover:bg-slate-800/50 transition-all" title="Sair do Sistema">
-                <i class="fa-solid fa-right-from-bracket"></i>
+            <button onclick="logout()" class="text-slate-500 hover:text-rose-400 p-2.5 rounded-xl hover:bg-slate-900 transition-all shrink-0" title="Sair do Sistema">
+                <i class="fa-solid fa-right-from-bracket text-base"></i>
             </button>
         </div>
     </aside>
 
-    <main class="flex-1 p-10 overflow-y-auto max-w-[1600px] mx-auto w-full">
+    <main class="flex-1 p-4 sm:p-6 md:p-10 overflow-y-auto max-w-[1600px] w-full mx-auto">
 
-        <div id="aba-agendamentos" class="content-view space-y-8">
-            <header class="flex justify-between items-center border-b border-slate-200 pb-6">
+        <div id="aba-agendamentos" class="content-view space-y-6 md:space-y-8">
+            <header class="flex flex-col sm:flex-row gap-4 justify-between sm:items-center border-b border-slate-200 pb-5 md:pb-6">
                 <div>
-                    <h1 class="text-3xl font-extrabold text-slate-900 tracking-tight">Painel de Compromissos</h1>
-                    <p class="text-slate-500 mt-1 text-sm">Monitore, confirme e faça a triagem do seu fluxo de horários.</p>
+                    <h1 class="text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight">Painel de Compromissos</h1>
+                    <p class="text-slate-500 mt-0.5 text-xs md:text-sm">Monitore, confirme e gerencie seu fluxo de horários.</p>
                 </div>
-                <button class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2.5 px-5 rounded-xl shadow-md shadow-indigo-600/10 transition-all flex items-center gap-2 text-sm" id="btnNovoAgendamento">
+                <button class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-5 rounded-xl shadow-md shadow-indigo-600/10 transition-all flex items-center justify-center gap-2 text-xs md:text-sm w-full sm:w-auto" id="btnNovoAgendamento">
                     <i class="fa-solid fa-plus text-xs"></i> Criar Agendamento
                 </button>
             </header>
 
             <section>
-                <div class="flex items-center gap-3 mb-6">
-                    <h3 class="text-lg font-bold text-slate-900">Agenda Ativa</h3>
-                    <span id="contadorAgendamentos" class="bg-slate-200 text-slate-800 text-xs font-bold px-3 py-1 rounded-full">0 ativos</span>
+                <div class="flex items-center gap-2.5 mb-5 md:mb-6">
+                    <h3 class="text-base md:text-lg font-extrabold text-slate-900">Agenda Ativa</h3>
+                    <span id="contadorAgendamentos" class="bg-indigo-50 text-indigo-700 text-[10px] md:text-xs font-bold px-2.5 py-0.5 rounded-full">0 ativos</span>
                 </div>
-                <div id="listaAgendamentos" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+                <div id="listaAgendamentos" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6"></div>
             </section>
         </div>
 
-        <div id="aba-metricas" class="content-view hidden space-y-8">
-            <header class="border-b border-slate-200 pb-6">
-                <h1 class="text-3xl font-extrabold text-slate-900 tracking-tight">Métricas de Desempenho</h1>
-                <p class="text-slate-500 mt-1 text-sm">Visão analítica e taxas baseadas estritamente nas suas interações individuais.</p>
+        <div id="aba-metricas" class="content-view hidden space-y-6 md:space-y-8">
+            <header class="border-b border-slate-200 pb-5 md:pb-6">
+                <h1 class="text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight">Métricas de Desempenho</h1>
+                <p class="text-slate-500 mt-0.5 text-xs md:text-sm">Visão analítica profunda baseada unicamente no seu operador.</p>
             </header>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex items-center gap-4">
-                    <div class="p-4 bg-indigo-50 text-indigo-600 rounded-xl text-xl"><i class="fa-solid fa-calendar-check"></i></div>
-                    <div><p class="text-xs font-medium text-slate-400 uppercase tracking-wider">Seu Histórico Total</p><strong id="metricTotal" class="text-2xl font-bold text-slate-800">0</strong></div>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex items-center gap-4">
+                    <div class="p-3.5 bg-indigo-50 text-indigo-600 rounded-xl text-lg shrink-0"><i class="fa-solid fa-calendar-check"></i></div>
+                    <div class="min-w-0"><p class="text-[10px] font-bold text-slate-400 uppercase tracking-wider truncate">Seu Histórico Total</p><strong id="metricTotal" class="text-xl md:text-2xl font-extrabold text-slate-800 block">0</strong></div>
                 </div>
-                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex items-center gap-4">
-                    <div class="p-4 bg-emerald-50 text-emerald-600 rounded-xl text-xl"><i class="fa-solid fa-circle-check"></i></div>
-                    <div><p class="text-xs font-medium text-slate-400 uppercase tracking-wider">Sua Taxa Conclusão</p><strong id="metricConcluidos" class="text-2xl font-bold text-slate-800">0</strong></div>
+                <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex items-center gap-4">
+                    <div class="p-3.5 bg-emerald-50 text-emerald-600 rounded-xl text-lg shrink-0"><i class="fa-solid fa-circle-check"></i></div>
+                    <div class="min-w-0"><p class="text-[10px] font-bold text-slate-400 uppercase tracking-wider truncate">Sua Taxa Conclusão</p><strong id="metricConcluidos" class="text-xl md:text-2xl font-extrabold text-slate-800 block">0%</strong></div>
                 </div>
-                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex items-center gap-4">
-                    <div class="p-4 bg-rose-50 text-rose-600 rounded-xl text-xl"><i class="fa-solid fa-ban"></i></div>
-                    <div><p class="text-xs font-medium text-slate-400 uppercase tracking-wider">Sua Taxa Cancelamento</p><strong id="metricCancelados" class="text-2xl font-bold text-slate-800">0</strong></div>
+                <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex items-center gap-4">
+                    <div class="p-3.5 bg-rose-50 text-rose-600 rounded-xl text-lg shrink-0"><i class="fa-solid fa-ban"></i></div>
+                    <div class="min-w-0"><p class="text-[10px] font-bold text-slate-400 uppercase tracking-wider truncate">Sua Taxa Cancelamento</p><strong id="metricCancelados" class="text-xl md:text-2xl font-extrabold text-slate-800 block">0%</strong></div>
                 </div>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-                    <h4 class="font-bold text-slate-800 mb-4 text-sm uppercase tracking-wide text-slate-400">Sua Distribuição de Status</h4>
-                    <div class="max-w-[280px] mx-auto"><canvas id="chartStatus"></canvas></div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6">
+                <div class="bg-white p-5 md:p-6 rounded-2xl border border-slate-200 shadow-sm">
+                    <h4 class="font-bold text-xs uppercase tracking-wider text-slate-400 mb-4">Distribuição de Status</h4>
+                    <div class="max-w-[240px] md:max-w-[260px] mx-auto"><canvas id="chartStatus"></canvas></div>
                 </div>
-                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-center items-center text-center p-8">
-                    <div class="w-16 h-16 bg-slate-50 text-indigo-600 rounded-full flex items-center justify-center text-2xl border border-slate-100 mb-4"><i class="fa-solid fa-user-shield"></i></div>
-                    <h4 class="font-bold text-slate-800 mb-2">Visão Individualista Ativa</h4>
-                    <p class="text-sm text-slate-400 max-w-sm">Por razões de conformidade e segurança do Nexus, você está visualizando apenas os KPIs gerados pelo seu operador logado.</p>
+                <div class="bg-white rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-center items-center text-center p-6 md:p-8">
+                    <div class="w-14 h-14 bg-slate-50 text-indigo-600 rounded-full flex items-center justify-center text-xl border border-slate-100 mb-4"><i class="fa-solid fa-user-shield"></i></div>
+                    <h4 class="font-extrabold text-slate-800 text-sm md:text-base mb-1">Cofre de Dados Isolado</h4>
+                    <p class="text-xs md:text-sm text-slate-400 max-w-sm leading-relaxed">Suas métricas não se misturam com as de outros operadores. Segurança baseada no ecossistema isolado do Nexus.</p>
                 </div>
             </div>
         </div>
 
-        <div id="aba-ajustes" class="content-view hidden space-y-8">
-            <header class="border-b border-slate-200 pb-6">
-                <h1 class="text-3xl font-extrabold text-slate-900 tracking-tight">Ajustes Comerciais</h1>
-                <p class="text-slate-500 mt-1 text-sm">Configure as travas de validação do front-end sincronizadas com o Java.</p>
+        <div id="aba-ajustes" class="content-view hidden space-y-6 md:space-y-8">
+            <header class="border-b border-slate-200 pb-5 md:pb-6">
+                <h1 class="text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight">Ajustes Comerciais</h1>
+                <p class="text-slate-500 mt-0.5 text-xs md:text-sm">Configure travas de regras de negócio locais.</p>
             </header>
             <div class="bg-white rounded-2xl border border-slate-200 shadow-sm divide-y divide-slate-100 max-w-3xl">
-                <div class="p-6 flex justify-between items-start gap-4">
+                <div class="p-5 flex justify-between items-start gap-4">
                     <div>
-                        <h4 class="font-bold text-slate-900 mb-1">Bloqueio de Agenda Noturna</h4>
-                        <p class="text-sm text-slate-500">Impede que novos agendamentos sejam criados fora do expediente comercial básico (08h às 22h).</p>
+                        <h4 class="font-bold text-slate-900 text-sm md:text-base mb-0.5">Bloqueio de Agenda Noturna</h4>
+                        <p class="text-xs md:text-sm text-slate-500 leading-relaxed">Impede agendamentos fora do expediente regular comercial (08h às 22h).</p>
                     </div>
-                    <label class="relative inline-flex items-center cursor-pointer">
+                    <label class="relative inline-flex items-center cursor-pointer shrink-0 mt-1">
                         <input type="checkbox" id="ajusteExpediente" class="sr-only peer" checked>
-                        <div class="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-indigo-600"></div>
+                        <div class="w-11 h-6 bg-slate-200 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-indigo-600"></div>
                     </label>
                 </div>
-                <div class="p-6 flex justify-between items-start gap-4">
+                <div class="p-5 flex justify-between items-start gap-4">
                     <div>
-                        <h4 class="font-bold text-slate-900 mb-1">Trava Retroativa Automática</h4>
-                        <p class="text-sm text-slate-500">Bloqueia tentativas de agendamento em datas ou horários que já passaram em relação ao relógio atual.</p>
+                        <h4 class="font-bold text-slate-900 text-sm md:text-base mb-0.5">Trava Retroativa Automática</h4>
+                        <p class="text-xs md:text-sm text-slate-500 leading-relaxed">Bloqueia marcações em datas passadas em relação ao horário de Brasília atual.</p>
                     </div>
-                    <label class="relative inline-flex items-center cursor-pointer">
+                    <label class="relative inline-flex items-center cursor-pointer shrink-0 mt-1">
                         <input type="checkbox" id="ajusteRetroativo" class="sr-only peer" checked>
-                        <div class="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-indigo-600"></div>
+                        <div class="w-11 h-6 bg-slate-200 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-indigo-600"></div>
                     </label>
                 </div>
             </div>
@@ -206,37 +223,37 @@
 </div>
 
 <div class="modal-overlay" id="modalAgendamento">
-    <div class="modal-card bg-white p-8 rounded-2xl shadow-2xl max-w-xl w-full mx-4 border border-slate-100">
-        <div class="modal-header flex justify-between items-center mb-6">
-            <h3 class="text-xl font-bold text-slate-900 tracking-tight">Bloquear Novo Horário</h3>
-            <button class="text-2xl text-slate-400 hover:text-slate-600" id="btnCloseModal">&times;</button>
+    <div class="modal-card bg-white p-5 md:p-8 rounded-t-2xl sm:rounded-2xl shadow-2xl max-w-xl w-full mx-0 sm:mx-4 border border-slate-100 max-h-[90vh] overflow-y-auto">
+        <div class="modal-header flex justify-between items-center mb-5 md:mb-6">
+            <h3 class="text-lg md:text-xl font-bold text-slate-900 tracking-tight">Bloquear Novo Horário</h3>
+            <button class="text-2xl text-slate-400 hover:text-slate-600 p-1" id="btnCloseModal">&times;</button>
         </div>
-        <form id="formAgendamento" class="space-y-4">
+        <form id="formAgendamento" class="space-y-4 text-left">
             <div>
-                <label for="titulo" class="block text-sm font-semibold text-slate-700 mb-1">Título do Evento</label>
-                <input type="text" id="titulo" required class="w-full px-4 py-2.5 border border-slate-200 rounded-xl outline-none focus:border-indigo-600 text-sm font-medium" placeholder="Ex: Alinhamento Estratégico Nexus">
+                <label for="titulo" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Título do Evento</label>
+                <input type="text" id="titulo" required class="w-full px-4 py-2.5 border border-slate-200 rounded-xl outline-none focus:border-indigo-600 text-sm font-medium" placeholder="Ex: Reunião Comercial Nexus">
             </div>
             <div>
-                <label for="usuario" class="block text-sm font-semibold text-slate-700 mb-1">Operador / Responsável</label>
-                <input type="text" id="usuario" readonly class="w-full px-4 py-2.5 border border-slate-100 bg-slate-50 rounded-xl text-slate-500 text-sm font-semibold cursor-not-allowed">
+                <label for="usuario" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Operador Responsável</label>
+                <input type="text" id="usuario" readonly class="w-full px-4 py-2.5 border border-slate-100 bg-slate-50 rounded-xl text-slate-500 text-sm font-bold cursor-not-allowed">
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                    <label for="dataInicio" class="block text-sm font-semibold text-slate-700 mb-1">Início do Bloqueio</label>
-                    <input type="datetime-local" id="dataInicio" required class="w-full px-4 py-2.5 border border-slate-200 rounded-xl outline-none focus:border-indigo-600 text-sm font-medium">
+                    <label for="dataInicio" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Início do Bloqueio</label>
+                    <input type="datetime-local" id="dataInicio" required class="w-full px-4 py-2 border border-slate-200 rounded-xl outline-none focus:border-indigo-600 text-sm font-medium">
                 </div>
                 <div>
-                    <label for="dataFim" class="block text-sm font-semibold text-slate-700 mb-1">Término do Bloqueio</label>
-                    <input type="datetime-local" id="dataFim" required class="w-full px-4 py-2.5 border border-slate-200 rounded-xl outline-none focus:border-indigo-600 text-sm font-medium">
+                    <label for="dataFim" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Término do Bloqueio</label>
+                    <input type="datetime-local" id="dataFim" required class="w-full px-4 py-2 border border-slate-200 rounded-xl outline-none focus:border-indigo-600 text-sm font-medium">
                 </div>
             </div>
             <div>
-                <label for="descricao" class="block text-sm font-semibold text-slate-700 mb-1">Notas Descritivas</label>
-                <textarea id="descricao" rows="3" required class="w-full px-4 py-2.5 border border-slate-200 rounded-xl outline-none focus:border-indigo-600 text-sm font-medium" placeholder="Informe a pauta, link do Teams/Meet ou observações críticas..."></textarea>
+                <label for="descricao" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Notas de Pauta</label>
+                <textarea id="descricao" rows="3" required class="w-full px-4 py-2 border border-slate-200 rounded-xl outline-none focus:border-indigo-600 text-sm font-medium" placeholder="Pauta do alinhamento, links..."></textarea>
             </div>
-            <div class="flex justify-end gap-3 pt-4">
-                <button type="button" class="bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold py-2.5 px-5 rounded-xl text-sm" id="btnCancelarForm">Voltar</button>
-                <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2.5 px-5 rounded-xl shadow-md shadow-indigo-600/10 text-sm">Salvar Registro</button>
+            <div class="flex flex-col-reverse sm:flex-row justify-end gap-3 pt-3">
+                <button type="button" class="w-full sm:w-auto bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold py-2.5 px-5 rounded-xl text-xs md:text-sm" id="btnCancelarForm">Voltar</button>
+                <button type="submit" class="w-full sm:w-auto bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2.5 px-5 rounded-xl shadow-md shadow-indigo-600/10 text-xs md:text-sm">Confirmar Registro</button>
             </div>
         </form>
     </div>

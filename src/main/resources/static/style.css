@@ -1,29 +1,59 @@
+.logo-container {
+    display: flex;
+    align-items: center;
+    user-select: none;
+}
+
+.logo-text {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: 6px;
+    background: linear-gradient(to right, #ffffff, #cbd5e1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.logo-text-dark {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: 6px;
+    background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 1px 1px rgba(0,0,0,0.05));
+}
+
 .nav-btn.active {
-    background-color: rgb(79 70 229) !important;
-    color: white !important;
-    box-shadow: 0 4px 12px -2px rgba(79, 70, 229, 0.3);
+    background-color: #1e1b4b !important;
+    color: #f8fafc !important;
+    border-left: 4px solid #4f46e5;
 }
 
 .modal-overlay {
     position: fixed; top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(15, 23, 42, 0.3); backdrop-filter: blur(4px);
+    background: rgba(3, 7, 18, 0.6); backdrop-filter: blur(6px);
     display: flex; align-items: center; justify-content: center;
     opacity: 0; pointer-events: none; transition: opacity 0.2s ease-in-out; z-index: 1000;
 }
 .modal-overlay.active { opacity: 1; pointer-events: auto; }
 
-.modal-card {
-    transform: scale(0.95); transition: transform 0.2s ease-in-out;
-}
+.modal-card { transform: scale(0.97); transition: transform 0.2s ease-in-out; }
 .modal-overlay.active .modal-card { transform: scale(1); }
 
-.status-AGENDADO { background-color: #e0e7ff; color: #4338ca; }
-.status-CONCLUIDO { background-color: #d1fae5; color: #065f46; }
-.status-CANCELADO { background-color: #fee2e2; color: #991b1b; }
-
-input[type="datetime-local"]::-webkit-calendar-picker-indicator {
-    cursor: pointer;
-    opacity: 0.6;
-    transition: opacity 0.2s;
+@media (max-width: 640px) {
+    .modal-overlay { align-items: flex-end; }
+    .modal-card { width: 100%; border-radius: 20px 20px 0 0; transform: translateY(100%); transition: transform 0.25s ease-out; }
+    .modal-overlay.active .modal-card { transform: translateY(0); }
 }
-input[type="datetime-local"]::-webkit-calendar-picker-indicator:hover { opacity: 1; }
+
+.status-AGENDADO { background-color: #e0e7ff; color: #4338ca; border: 1px solid #c7d2fe; }
+.status-CONCLUIDO { background-color: #d1fae5; color: #065f46; border: 1px solid #a7f3d0; }
+.status-CANCELADO { background-color: #fee2e2; color: #991b1b; border: 1px solid #fecaca; }
+
+.animated-blur { animation: pulseBlur 8s infinite alternate ease-in-out; }
+.animated-blur-delayed { animation: pulseBlur 8s infinite alternate-reverse ease-in-out; }
+@keyframes pulseBlur {
+    0% { transform: scale(1) translate(0, 0); opacity: 0.12; }
+    100% { transform: scale(1.15) translate(20px, -20px); opacity: 0.18; }
+}
