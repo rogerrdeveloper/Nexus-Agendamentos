@@ -1,6 +1,3 @@
-Aqui está uma versão do README bem direta ao ponto, sem enrolação teórica e com um tom ideal para o nível de estágio: focado em mostrar o que o projeto faz, como rodar e as tecnologias usadas.
-
-Nexus Agendamentos
 O Nexus Agendamentos é um sistema simples para gerenciar e automatizar agendamentos de serviços. Ele possui uma interface visual de página única (feita com HTML, CSS e JavaScript) conectada a uma API desenvolvida em Java com Spring Boot e banco de dados PostgreSQL.
 
 O projeto está rodando online e pode ser testado diretamente pelo link:
