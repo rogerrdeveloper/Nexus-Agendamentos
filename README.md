@@ -1,41 +1,50 @@
-O Nexus Agendamentos é um sistema simples para gerenciar e automatizar agendamentos de serviços. Ele possui uma interface visual de página única (feita com HTML, CSS e JavaScript) conectada a uma API desenvolvida em Java com Spring Boot e banco de dados PostgreSQL.
+# Nexus Agendamentos
 
-O projeto está rodando online e pode ser testado diretamente pelo link:
-https://nexus-agendamentos.onrender.com/
+O **Nexus Agendamentos** é um sistema focado no gerenciamento e na automatização de agendamentos de serviços. A aplicação conta com uma interface visual de página única (Single Page Application) integrada diretamente a uma API REST robusta desenvolvida em Java com Spring Boot e persistência em banco de dados PostgreSQL.
 
-O que o projeto faz
-Cadastro e Listagem: Permite criar novos agendamentos e listar os horários na tela.
+---
 
-Filtro por Usuário: É possível buscar agendamentos específicos digitando o nome do usuário.
+## 🔗 Link de Produção
 
-Ações de Status: Botões para concluir ou cancelar um agendamento diretamente pela interface.
+A aplicação foi totalmente conteinerizada e está em execução em ambiente de produção na nuvem. O acesso à interface e à API ocorre de forma unificada pelo link:
 
-Banco de Dados na Nuvem: Todas as informações são salvas em um banco de dados PostgreSQL real hospedado no Render.
+> **Ambiente Online:** https://nexus-agendamentos.onrender.com/
 
-Tecnologias Utilizadas
-Java 17 e Spring Boot (Spring Web e Spring Data JPA)
+---
 
-PostgreSQL (Banco de dados)
+## 🛠️ Matriz Tecnológica
 
-Flyway (Para criar as tabelas do banco automaticamente)
+| Camada | Tecnologia | Componente / Biblioteca |
+| :--- | :--- | :--- |
+| **Back-end** | Java 17 | Spring Boot 4.x (Web, Data JPA) |
+| **Banco de Dados** | PostgreSQL | Driver Nativo JDBC |
+| **Migrações** | Flyway | Evolução de Esquema Declarativa |
+| **Front-end** | Web Nativo | HTML5, CSS3, JavaScript (ES6) |
+| **Infraestrutura** | DevOps | Docker (Multi-stage Build), Render Cloud |
 
-HTML5, CSS3 e JavaScript (Interface do usuário)
+---
 
-Docker (Para rodar a aplicação em um container na nuvem)
+## 📋 Funcionalidades Principais
 
-Organização do Código
-O código está dividido dentro da pasta src/main/java/dev/rogerrdeveloper/miniagendamentoX/ seguindo a estrutura padrão do Spring:
+* **Persistência em Tempo Real:** Operações completas de CRUD salvas de forma segura em um servidor de banco de dados em nuvem.
+* **Filtros Avançados:** Mecanismo de busca que permite segmentar os registros de agendamentos por nome de usuário diretamente na tela.
+* **Fluxo de Estados:** Transição dinâmica do status do agendamento (Pendente, Concluído, Cancelado) através de requisições assíncronas.
+* **Interface Monolítica Simplificada:** Arquivos estáticos servidos diretamente pelo servidor Tomcat embutido no Spring Boot, eliminando problemas com CORS.
 
-controller/: Onde ficam as rotas da API (URLs que o front-end chama).
+---
 
-dto/: Classes que organizam os dados que entram e saem da API.
+## 📂 Arquitetura do Projeto
 
-mapper/: Converte os dados das requisições para o formato do banco.
+A organização de pastas adota o padrão de separação por responsabilidades recomendado pelo ecossistema Spring:
 
-model/: Classes que representam as tabelas do banco de dados.
 
-repository/: Onde ficam os comandos de salvar, deletar e buscar no banco (JPA).
+src/main/java/dev/rogerrdeveloper/miniagendamentoX/
+├── controller/  # Exposição dos endpoints REST e tratamento de requisições HTTP
+├── dto/         # Objetos de transferência de dados (Request e Response)
+├── mapper/      # Classes de conversão entre entidades de banco e DTOs
+├── model/       # Entidades mapeadas para tabelas relacionais e Enums
+├── repository/  # Camada de abstração de dados e consultas SQL (Spring Data)
+└── service/     # Isolamento de lógica de negócio e validações do sistema
+[!NOTE]
+Os arquivos de interface (index.html, style.css e app.js) ficam alocados em src/main/resources/static/. Isso faz com que o Spring Boot gerencie e sirva as telas automaticamente na rota raiz (/).
 
-service/: Onde fica a lógica e as regras de negócio do sistema.
-
-resources/static/: Onde estão os arquivos de tela (index.html, style.css e app.js).
